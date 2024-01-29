@@ -1,0 +1,2 @@
+class ScrennPost < ApplicationRecord
+end

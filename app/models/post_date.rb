@@ -1,0 +1,2 @@
+class PostDate < ApplicationRecord
+end

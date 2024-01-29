@@ -10,8 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_29_135324) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "payments", force: :cascade do |t|
+    t.string "method"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "amount"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_dates", force: :cascade do |t|
+    t.integer "post_id"
+    t.datetime "date"
+    t.integer "frequency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "screens", force: :cascade do |t|
+    t.string "name"
+    t.string "country"
+    t.string "location"
+    t.integer "post_id"
+    t.string "dimensions"
+    t.integer "stream_price"
+    t.string "status"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "screnn_posts", force: :cascade do |t|
+    t.integer "screen_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

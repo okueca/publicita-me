@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @screnn_post %>
+
+<div>
+  <%= link_to "Edit this screnn post", edit_screnn_post_path(@screnn_post) %> |
+  <%= link_to "Back to screnn posts", screnn_posts_path %>
+
+  <%= button_to "Destroy this screnn post", @screnn_post, method: :delete %>
+</div>

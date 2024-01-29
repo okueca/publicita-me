@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Screnn posts</h1>
+
+<div id="screnn_posts">
+  <% @screnn_posts.each do |screnn_post| %>
+    <%= render screnn_post %>
+    <p>
+      <%= link_to "Show this screnn post", screnn_post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New screnn post", new_screnn_post_path %>
