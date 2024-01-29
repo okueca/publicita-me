@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_29_135324) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_29_164035) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_135324) do
     t.integer "user_id"
     t.integer "post_id"
     t.integer "amount"
-    t.string "status"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,9 +35,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_135324) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
-    t.string "status"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content"
+    t.integer "content_type"
   end
 
   create_table "screens", force: :cascade do |t|
@@ -47,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_135324) do
     t.integer "post_id"
     t.string "dimensions"
     t.integer "stream_price"
-    t.string "status"
+    t.integer "status"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
