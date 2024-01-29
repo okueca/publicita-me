@@ -23,8 +23,8 @@ Things you may want to cover:
 
 * ...
 
-  ============================ DB DESIGN ==============================================
-  // Use DBML to define your database structure
+============================ DB DESIGN ==============================================
+// Use DBML to define your database structure
 // Docs: https://dbml.dbdiagram.io/docs
 
 Table posts {
@@ -58,6 +58,14 @@ Table payments {
 }
 
 
+Table screen_post {
+  id integer [primary key]
+  screen_id integer
+  post_id integer
+  created_at timestamp
+}
+
+
 
 Table screens {
   id integer [primary key]
@@ -68,16 +76,25 @@ Table screens {
   dimantion varchar
   price_per_min integer
   status varchar
+  description varchar
   created_at timestamp
 }
+
+
+
+
 
 
 Ref: "users"."id" < "posts"."user_id"
 
 Ref: "users"."id" < "payments"."user_id"
 
-Ref: "posts"."id" < "screens"."post_id"
+
 
 Ref: "posts"."id" - "payments"."post_id"
+
+Ref: "posts"."id" < "screen_post"."post_id"
+
+Ref: "screens"."id" < "screen_post"."screen_id"  
 
 =======================================================================================00
