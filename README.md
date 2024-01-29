@@ -30,8 +30,9 @@ Table posts {
   user_id integer
   title varchar
   timestamp varchar
-  status varchar
-  screens varchar
+  status integer
+  content varchar
+  content_type integer
   created_at timestamp 
 }
 
@@ -51,7 +52,7 @@ Table payments {
   user_id integer
   post_id integer
   amount integer
-  status varchar
+  status integer
   created_at timestamp
 }
 
@@ -73,7 +74,7 @@ Table screens {
   post_id integer
   dimantion varchar
   price_per_min integer
-  status varchar
+  status integer
   description varchar
   created_at timestamp
 }
@@ -103,4 +104,7 @@ Ref: "screens"."id" < "screen_post"."screen_id"
 
 
 Ref: "posts"."id" < "post_dates"."post_id"
-=======================================================================================00
+
+Ref: "payments"."id" < "payments"."method"
+
+=====================================================================================
