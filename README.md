@@ -24,8 +24,6 @@ Things you may want to cover:
 * ...
 
 ============================ DB DESIGN ==============================================
-// Use DBML to define your database structure
-// Docs: https://dbml.dbdiagram.io/docs
 
 Table posts {
   id integer [primary key]
@@ -80,6 +78,14 @@ Table screens {
   created_at timestamp
 }
 
+Table post_dates {
+  id integer [primary key]
+  post_id integer
+  date date
+  frequency integer
+  created_at timestamp
+}
+
 
 
 
@@ -89,12 +95,12 @@ Ref: "users"."id" < "posts"."user_id"
 
 Ref: "users"."id" < "payments"."user_id"
 
-
-
 Ref: "posts"."id" - "payments"."post_id"
 
 Ref: "posts"."id" < "screen_post"."post_id"
 
 Ref: "screens"."id" < "screen_post"."screen_id"  
 
+
+Ref: "posts"."id" < "post_dates"."post_id"
 =======================================================================================00
