@@ -26,7 +26,7 @@ Things you may want to cover:
 =========================== SYSTEM ARCHITECTURE =========================
 ![My Image](system-architecture.png)
 
-============================ DATABASE SYSTEM DESIGN ==================================
+============================ DATABASE SYSTEM DESIGN ======================
 ![My Image](db_design.png)
 
 Table posts {
