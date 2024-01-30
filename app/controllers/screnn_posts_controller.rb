@@ -1,4 +1,5 @@
 class ScrennPostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_screnn_post, only: %i[ show edit update destroy ]
 
   # GET /screnn_posts or /screnn_posts.json

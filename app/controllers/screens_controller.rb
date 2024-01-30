@@ -1,4 +1,5 @@
 class ScreensController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_screen, only: %i[ show edit update destroy ]
 
   # GET /screens or /screens.json
