@@ -24,6 +24,7 @@ Things you may want to cover:
 * ...
 
 ============================ DB DESIGN ==============================================
+![My Image](publicita-me.png)
 
 Table posts {
   id integer [primary key]
