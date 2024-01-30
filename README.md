@@ -23,7 +23,10 @@ Things you may want to cover:
 
 * ...
 
-============================ DB DESIGN ==============================================
+========================================= SYSTEM ARCHITECTURE =========================
+![My Image](system-architecture.png)
+
+========================================= DB DESIGN ==================================
 ![My Image](db_design.png)
 
 Table posts {
