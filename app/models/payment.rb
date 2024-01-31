@@ -6,7 +6,7 @@ class Payment < ApplicationRecord
     validate   :amount_is_positive
     validates  :amount, presence: true
     validates  :status, presence: true
-    enum status: [:inprogress, :complete, :fail], validate: true 
+    enum status: [:inprogress, :complete, :fail]
     validates  :amount, numericality: { greater_than: 0 }
     
 end

@@ -7,7 +7,7 @@ class Post < ApplicationRecord
     validates  :content, presence: true
     validates  :user_id, presence: true
     validates  :content_type, presence: true
-    enum content_type: [:video, :image], validate: true 
+    enum content_type: [:video, :image]
 
     
 end

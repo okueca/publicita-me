@@ -6,6 +6,6 @@ class Screen < ApplicationRecord
     validates :stream_price, presence: true
     validates :status, presence: true
     validates :description, presence: true
-    enum status: [:active, :inactive], validate: true
+    enum status: [:active, :inactive]
 
 end
