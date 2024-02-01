@@ -76,3 +76,5 @@ end
 
 gem 'factory_bot_rails'
 gem "devise", "~> 4.9"
+gem 'bootstrap', '~> 5.3.2'
+gem 'dartsass-sprockets'
