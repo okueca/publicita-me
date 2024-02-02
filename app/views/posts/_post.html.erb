@@ -6,11 +6,22 @@
 
   <p>
     <strong>User:</strong>
-    <%= post.user_id %>
+    <%= post.user.username %>
   </p>
 
   <p>
-    <strong>Status:</strong>
+    <strong>Content:</strong>
+    <% if post.content.attached?%>
+      <% if post.content.content_type.include?("image")%>
+        <%= image_tag url_for(post.content), controls: true %>
+      <% else %>
+          <%=video_tag url_for(post.content), controls: true %>
+      <% end %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>status:</strong>
     <%= post.status %>
   </p>
 
