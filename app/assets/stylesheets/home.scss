@@ -1,71 +1,86 @@
-.v-header{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    color: whitesmoke;
-  }
- .text-header{
-    font-size: 8rem;
-    font-weight: 700;
- }
-  .container{
-    max-width: 960px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: auto;
-    text-align: center;
-  }
-.btn-size{
-    width: 15%;
-    font-size: x-large;
+.v-header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
 }
-  .move-position {
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
- 
+.text-header {
+  font-size: 8rem;
+  font-weight: 700;
+}
 
-  .fullscreen-video-wraper{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
- 
-  .fullscreen-video-wraper video{
-    min-width: 100%;
-    min-height: 100%;
-  }
- 
-  .header-overlay{
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    z-index: 1;
-    opacity: .5;
+.no-pm{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .text-header {
+    font-size: 3rem;
+    font-weight: 700;
   }
 
-  .header-content{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 3;
-  
+  .btn-size {
+    width: 50% !important;
+    font-size: large !important;
   }
+}
 
-  .menu li {
-    list-style: none;
-  }
+.container {
+  max-width: 960px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+  text-align: center;
+}
+.btn-size {
+  width: 15%;
+  font-size: x-large;
+}
+.move-position {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .menu li a {
-    text-decoration: none;
-    color: whitesmoke;
-  }
- 
+.fullscreen-video-wraper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fullscreen-video-wraper video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.header-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.header-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
