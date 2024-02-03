@@ -1,2 +1,59 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<%= stylesheet_link_tag('home') %>
+
+
+<header class="v-header ">
+  <div class="fullscreen-video-wraper">
+    <%= video_tag "bg.mp4", controls: false, autoplay: true, muted: true, loop: true%>
+  </div>
+
+  <div class="header-overlay"></div>
+  
+  <div class="header-content d-flex flex-column">
+    <nav class="row  w-100  px-5 pt-2 ">
+
+      <div class="col-6">
+          <h1 class="text-light">LOGO</h1>
+      </div>
+
+      <div class="col-6">
+        <ul class=" text-end menu nav justify-content-end ">
+          <li class="nav-item"><a class="nav-link " href="#about">Sign Up</a></li>
+          <li  class="nav-item"><a class="nav-link " href="#services">Sign In</a></li>
+          <li class="nav-item"><a class="nav-link " href="#contact">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class=" w-100 move-position d-flex flex-column  justify-content-center align-items-center gap-5">
+  
+       
+          <h1 class="opacity-50 text-header">PUBLICITA-TE</h1>
+        
+        <button type="button" class="btn btn-success btn-size">Be a Celebrity</button>
+    
+    </div>
+
+     <div class="row w-100 position-absolute bottom-0 left-0 p-5 ">
+      
+      <div class="col-6 d-flex flex-row  align-items-center gap-3  flex-wrap">
+     
+        <span class="fs-6 text-light">
+          Follow us on 
+        </span>
+
+        <div class="d-flex flex-row gap-4">
+            <i class="fa-brands fa-instagram fa-1x fa-beat"></i>
+            <i class="fa-brands fa-facebook fa-1x fa-beat"></i>
+            <i class="fa-brands fa-tiktok fa-1x fa-beat"></i>
+            <i class="fa-brands fa-twitter fa-1x fa-beat"></i>
+        </div>
+      </div>
+      <div class="col-6 text-end ">
+        <span class="fs-6  text-light ">
+          &copy; 2024 Publicita-te | Design by Okueca
+        </span>
+      </div>
+
+    </div>
+   
+  </div>
+</header>

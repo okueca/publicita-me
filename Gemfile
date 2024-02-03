@@ -72,6 +72,7 @@ group :development,  :test do
 
 end
 
+gem "font-awesome-sass", "~> 6.5.1"
 
 
 gem 'factory_bot_rails'
