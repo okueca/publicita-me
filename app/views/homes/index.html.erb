@@ -20,7 +20,7 @@
       </button>
     </div>
 
-    <div class="row w-100 position-absolute bottom-0 left-0  px-2 px-sm-0 ">
+    <div class="row w-100 position-absolute bottom-0 left-0  p-5 footer-media-sm">
       <div class="col-6 d-flex flex-row align-items-center gap-3 flex-wrap">
         <span class="fs-6 text-light"> Follow us on </span>
 
@@ -32,17 +32,17 @@
         </div>
       </div>
       <% unless mobile_device? %>
-          <div class="col-6 text-end">
+          <div class="col-6 p-0 text-end pe-10 ">
             <span class="fs-6 text-light">
               &copy; 2024 Publicita-te | Design by Okueca
             </span>
           </div>
           <% else %>
-        <div class="col-6 text-end">
+        <div class="col-6 p-0">
           <div
-            class="d-flex flex-column align-items-center justify-content-center gap-3"
+            class="d-flex flex-column align-items-end justify-content-end copy-right-sm gap-3"
           >
-            <span class="fs-6 text-light"> &copy; 2024 Publicita-te </span>
+            <span class="fs-6 text-light "> &copy; 2024 Publicita-te </span>
 
             <span class="fs-6 text-light"> Design by Okueca </span>
           </div>
