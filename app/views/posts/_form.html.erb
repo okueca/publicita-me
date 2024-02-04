@@ -7,7 +7,7 @@
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
-      </ul>
+       </ul>
     </div>
   <% end %>
 
@@ -17,13 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.file_field :content %>
   </div>
 
   <div>
