@@ -1,4 +1,18 @@
 <div id="<%= dom_id post %>">
+  
+  <p>
+    <strong>Content:</strong>
+    <div class="text-center">
+      <% if post.content.attached?%>
+        <% if post.content.content_type.include?("image")%>
+          <%= image_tag url_for(post.content), class:"object-fit-contain border rounded", width: "100px", controls: true %>
+        <% else %>
+            <%=video_tag url_for(post.content),class:"object-fit-contain", width: "200px", controls: true %>
+        <% end %>
+      <% end %>
+    </div>
+  </p>
+
   <p>
     <strong>Title:</strong>
     <%= post.title %>
@@ -7,17 +21,6 @@
   <p>
     <strong>User:</strong>
     <%= post.user.username %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <% if post.content.attached?%>
-      <% if post.content.content_type.include?("image")%>
-        <%= image_tag url_for(post.content), controls: true %>
-      <% else %>
-          <%=video_tag url_for(post.content), controls: true %>
-      <% end %>
-    <% end %>
   </p>
 
   <p>

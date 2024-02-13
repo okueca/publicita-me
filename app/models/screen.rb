@@ -6,6 +6,9 @@ class Screen < ApplicationRecord
     validates :stream_price, presence: true
     validates :status, presence: true
     validates :description, presence: true
-    enum status: [:active, :inactive]
+    enum status: [:active, :inactive], _default: :active
 
+    def description_to_show
+        "#{self.name} - #{self.location} - #{self.dimensions}"
+    end
 end
