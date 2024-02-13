@@ -10,18 +10,50 @@
        </ul>
     </div>
   <% end %>
+<div class="row g-3 card" data-controller="nested-form-posts">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 mb-3">
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title, class:"form-control" %>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+          <template data-target="nested-form-posts.template">
+              <%= form.fields_for :post_screens, PostScreen.new, child_index: 'NEW_RECORD' do |line_item_fields| %>
+                  <div class="nested-form-vehicles-wrapper nested-form-vehicles mb-2" data-new-record="<%= form.object&.new_record? %>" >
+                      <%= render "screens_for_post_fields", line_item_fields: line_item_fields %>
+                  </div>
+              <% end %>
+          </template> 
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+          <%= form.fields_for :post_screens do |line_item_fields| %>
+              <%= render "screens_for_post_fields", line_item_fields: line_item_fields %>
+          <% end %>  
+          <div data-target="target"></div>
+          <div class="mb-1" data-target="nested-form-posts.links">
+              <%= link_to "#", class: "btn btn-success waves-effect waves-light mt-2 ", data: { action: "click->nested-form-posts#add_association" } do%>
+                  <i class="mdi mdi-plus"></i> Adicionar Tela 
+              <% end %>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 mb-3">
+      <%= form.label :content, "Select content", class:"form-control", style: "display: block" %>
+      <%= form.file_field :content, class:"form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.file_field :content %>
-  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 mb-3">
+      <% if @post&.new_record? %>
+        <%= form.submit "Create a Post" , class:"btn btn-primary col-12"%>
+      <% else %>
+        <%= form.submit "Update a Post" , class:"btn btn-primary col-12"%>
+      <% end %>
 
-  <div>
-    <%= form.submit %>
+    </div>
   </div>
+</div>
 <% end %>

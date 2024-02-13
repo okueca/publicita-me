@@ -1,15 +1,22 @@
 <p style="color: green"><%= notice %></p>
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col"><h3 class="text-center">Posts</h3></th>
+    </tr>
+      <tbody>
+        <% @posts.each do |post| %> 
+              <tr onclick="window.location='<%= post_path(post.id) %>'" style="cursor:pointer;">
+                <td><%= post.title %></td>
+              </tr>
+        <% end %>
+      </tbody>
+      </div>
+    </table>
+  </div>
 
-<h1>Posts</h1>
-
-<div id="posts">
-  
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
 </div>
 
 <%= link_to "New post", new_post_path %>

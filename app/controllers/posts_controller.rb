@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.post_screens.build
   end
 
   # GET /posts/1/edit
@@ -66,6 +67,9 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(
+        :title, :content,
+        post_screens_attributes: [:id, :screen_id, :_destroy]
+      )
     end
 end
