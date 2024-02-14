@@ -77,5 +77,4 @@ gem "image_processing", ">= 1.2"
 gem 'factory_bot_rails'
 gem "devise", "~> 4.9"
 gem 'bootstrap', '~> 5.3.2'
-gem 'jquery-rails'
 gem 'dartsass-sprockets'

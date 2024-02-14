@@ -2,8 +2,7 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../builds
 //= link bg.mp4
-//= require bootstrap
 //= require_tree .
 //= require activestorage
-//= require jquery3
-//= require jquery_ujs
+//= link_tree ../../javascript .js
+
