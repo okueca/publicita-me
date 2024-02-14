@@ -1,17 +1,22 @@
+<%= render "layouts/navbar" %>
+<%= stylesheet_link_tag('new_post') %>
 
-<h3 class="text-center mb-4">New post</h3>
 
-<div class="container text-center">
-  <div class="row align-items-center">
+<div class="container margin_y">
+ 
+  <div class="row ">
+
     <div class="col-1">
+     
     </div>
     <div class="col-10">
+      <h3 class="text-start mb-4 ">Create New Post</h3>
       <%= render "form", post: @post %>
     </div>
     <div class="col-1">
     </div>
   </div>
 </div>
-
+<%= render "layouts/footer" %>
       
 
