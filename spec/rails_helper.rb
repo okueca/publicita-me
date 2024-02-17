@@ -56,6 +56,18 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://rspec.info/features/6-0/rspec-rails
+  
+  # Testing Devise
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+
+  config.include Warden::Test::Helpers
+
+  # End Testing Devise
+  
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.
