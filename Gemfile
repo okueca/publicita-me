@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
+gem 'leaflet-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -78,3 +79,4 @@ gem 'factory_bot_rails'
 gem "devise", "~> 4.9"
 gem 'bootstrap', '~> 5.3.2'
 gem 'dartsass-sprockets'
+gem "mapkick-rb"

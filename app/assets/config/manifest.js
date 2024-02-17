@@ -3,7 +3,9 @@
 //= link_tree ../builds
 //= link bg.mp4
 //= require bootstrap
+//= require leaflet
 //= require_tree .
 //= require activestorage
 //= link_tree ../../javascript .js
+// ...
 //= link_tree ../../../vendor/javascript .js
