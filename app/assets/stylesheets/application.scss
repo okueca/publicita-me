@@ -9,12 +9,19 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require leaflet
  *= require_tree .
  *= require_self
+ /*
+ *= require mapbox-gl
+ *= require mapbox-gl-geocoder
+ *= require mapbox-gl-draw
+ *= require mapbox-gl-directions
+ *= require mapbox-gl-compare
  */
  @import "bootstrap";
  @import "font-awesome";
+ @import 'mapbox-gl';
 
 
 *,
@@ -28,4 +35,8 @@
   padding: 0;
 }
 
-
+.mapxxx{
+ 
+  width: 100vw;
+  height: 580px;
+}

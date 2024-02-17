@@ -5,4 +5,9 @@
 //= require_tree .
 //= require activestorage
 //= link_tree ../../javascript .js
+//
+//*= require mapbox-gl
+//= require_tree .
+//*= require mapbox-gl-geocoder
+// ...
 

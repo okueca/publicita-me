@@ -3,4 +3,5 @@ import "controllers"
 import Rails from "@rails/ujs"
 import "popper"
 import "bootstrap"
+import "mapkick/bundle"
 Rails.start()
