@@ -2,24 +2,29 @@
 <%= stylesheet_link_tag('new_post') %>
 
 
-<div class="container margin_y">
+<div class="container margin_y" data-controller="map">
  
   <div class="row ">
 
     <div class="col-1">
      
     </div>
-    <div class="col-10">
+    <div class="col-8">
       <h3 class="text-start mb-4 ">Create New Post</h3>
       <%= render "form", post: @post %>
     </div>
-    <div class="col-1 leaflet-container" data-controller="map" style="leaflet-container{min-height: 400px}" >
+    <div class="col-3" id="map" data-src="<%= screens_url(format: :json)%>">
 
+    </div>
+
+    
+  </div>
+  <div class="row">
+    <div class="col-12"  style="height: 400px; weight: 500px" >
+        
     </div>
   </div>
 </div>
-
-  <div id="map"></div>
 <%= render "layouts/footer" %>
       
 
