@@ -1,6 +1,8 @@
 <%= stylesheet_link_tag('home') %>
 
 <header class="v-header">
+
+
   <div class="fullscreen-video-wraper">
     <%= video_tag "bg.mp4", controls: false, autoplay: true, muted: true, loop:
     true%>
@@ -9,7 +11,6 @@
   <div class="header-overlay"></div>
 
   <div class="header-content d-flex flex-column">
-    <%= render "layouts/navbar" %>
     <div
       class="w-100 move-position d-flex flex-column justify-content-center align-items-center gap-5"
     >
