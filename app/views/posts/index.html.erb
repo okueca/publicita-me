@@ -1,15 +1,51 @@
 <p style="color: green"><%= notice %></p>
 <div class="row">
+
+  <div class="row px-4 mb-5">
+    <h3 class="mb-4">PERFIL</h3>
+    <div class="col-3 ">
+      <i class="fa-sharp fa-solid fa-circle-user fa-4x"></i>    </div>
+    <div class="col">
+      
+        <div class="mb-1">
+          <%= current_user.username %>
+        </div>
+        <div class="">
+          <%= link_to "Edit Profile", new_post_path , class:"text-decoration-none"%>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+
   <div class="col-12">
-    <table class="table table-striped">
+    <h3 class="ps-2" >Your Posts</h3>
+    <table class="table table-striped ">
+   
     <thead>
-    <tr>
-      <th scope="col"><h3 class="text-center">Posts</h3></th>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>    
     </tr>
       <tbody>
         <% @posts.each do |post| %> 
               <tr onclick="window.location='<%= post_path(post.id) %>'" style="cursor:pointer;">
                 <td><%= post.title %></td>
+                <td><%= post.status %></td>
+                <td>
+                  <%= link_to edit_post_path(post.id) do %>
+                    <i class="fa-solid fa-edit "></i>
+                  <% end %> 
+                </td>
+
+                <td>
+                  <%= link_to post_path(post.id), method: "delete"  do %>
+                    <i class="fa-solid fa-trash text-danger"></i>                  
+                  <% end %> 
+                </td>
+              
               </tr>
         <% end %>
       </tbody>
@@ -19,4 +55,3 @@
 
 </div>
 
-<%= link_to "New post", new_post_path %>

@@ -21,9 +21,10 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <main><%= yield %></main>
-    <% if request.env['PATH_INFO'] != '/' || request.env['PATH_INFO'] == '/homes/index'  %>
-      <%= render "layouts/footer" %>
-    <% end %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
+   
   </body>
 </html>
