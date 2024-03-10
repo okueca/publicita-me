@@ -1,21 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container text-center">
-  <div class="row align-items-center card">
-    <div class="col-1">
-    </div>
+<div class="container text-start mb-5">
+  <div class="row justify-content-center">
     <div class="col-10">
       <%= render @post %>
     </div>
-    <div class="col-1">
-    </div>
+    
   </div>
+
+
+
 </div>
 
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>

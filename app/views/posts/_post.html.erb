@@ -1,7 +1,6 @@
 <div id="<%= dom_id post %>">
 
-    <strong>Content:</strong>
-    <div class="">
+    <div class="w-100">
       <% if post.content.attached?%>
         <% if post.content.content_type.include?("image")%>
           <%= image_tag url_for(post.content), class:"object-fit-contain border rounded", width: "100%", controls: true %>
@@ -11,22 +10,30 @@
       <% end %>
     </div>
 
-  <div class="card-body bg-body-secondary">
+  <div class="card-body bg-light">
     <p>
-      <strong>Title:</strong>
+     Title:
       <%= post.title %>
     </p>
   
     <p>
-      <strong>User:</strong>
+      User:
       <%= post.user.username %>
     </p>
   
-    <p>
-      <strong>status:</strong>
+    <p >
+     status:
       <%= post.status %>
     </p>
   </div>
  
-
+  <div class="d-flex flex-column ">
+    <div class="d-flex align-items-center">
+      <%= link_to "Edit this post", edit_post_path(@post) , class: " text-decoration-none"%> |
+      <%= link_to "Back to posts", posts_path ,class: "text-decoration-none"%>
+    </div>
+    
+  
+    <%= link_to "Destroy this post", @post, method: :delete, class: "text-danger text-decoration-none" %>
+  </div>
 </div>
