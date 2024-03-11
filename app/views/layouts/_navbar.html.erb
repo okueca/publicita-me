@@ -4,6 +4,7 @@
 <nav class="<%= color %> z-3 navbar navbar-expand-lg">
     <a class="navbar-brand text-light ps-4" href="#">Publicita-te</a>
     <button class="navbar-toggler bg-light me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end sm-bg-dark pe-5" id="navbarNavAltMarkup">
@@ -11,8 +12,8 @@
         <%= link_to "Home",  homes_index_path, :class => "nav-link text-light" %>
         <a class="nav-link text-light" href="#">About</a>
        
-        <% if current_user %>
-          <a class="nav-link text-light" href="#">Perfil</a>
+        <% if current_user %>     
+          <%= link_to "Perfil",  posts_path, :class => "nav-link text-light" %>
           <%= link_to "New Post",  new_post_path, :class => "nav-link text-light" %>
           <%= link_to "Log out",  destroy_user_session_path, :class => "nav-link text-light" %>
         <% else %>
