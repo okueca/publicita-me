@@ -22,9 +22,14 @@
   <body>
     <%= render "layouts/navbar" %>
     <main>
+    <% if  notice  %>
+      <div class="alert alert-success alert-dismissible fade show z-3" role="alert">
+        <strong><%= notice %></strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
       <%= yield %>
     </main>
     <%= render "layouts/footer" %>
-   
   </body>
 </html>
