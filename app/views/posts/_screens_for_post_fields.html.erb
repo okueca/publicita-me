@@ -2,7 +2,7 @@
 
 <div class="row align-items-center justify-content-center">
     <div class="col-10 ">
-        <%= line_item_fields.collection_select :screen_id, Screen.all, :id, :description_to_show, {prompt: 'Selecione uma categoria'}, { class: 'form-control' } %>
+        <%= line_item_fields.collection_select :screen_id, Screen.all, :id, :description_to_show, {prompt: 'Select a screen'}, { class: 'form-control' } %>
     </div>
     
     <div class="col-2" >
