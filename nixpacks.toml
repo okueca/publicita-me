@@ -1,0 +1,2 @@
+[start]
+cmd = "./nixpacks/scripts/create_db.sh"
