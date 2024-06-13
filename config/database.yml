@@ -85,4 +85,5 @@ production:
   host: postgres://postgres:cuidado@185.143.45.143:5430/postgres
   database: publicita_me_production
   username: publicita_me
+  port: 5430
   password: <%= ENV["PUBLICITA_ME_DATABASE_PASSWORD"] %>
