@@ -17,9 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: localhost
   username: postgres
-  password: postgres
+  password: cuidado
 
 development:
   <<: *default
@@ -80,7 +80,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  host: postgres://postgres:cuidado@zwsg40s:5432/postgres
   database: publicita_me_production
   username: publicita_me
   password: <%= ENV["PUBLICITA_ME_DATABASE_PASSWORD"] %>
