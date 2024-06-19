@@ -4,11 +4,11 @@ RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev
 
 WORKDIR /docker/app
 
-COPY Gemfile* ./
+COPY Gemfile* ./data/coolify/applications/ksc08cs/
 
 RUN bundle install
 
-ADD . /docker/app
+ADD ./data/coolify/applications/ksc08cs/ /docker/app
 
 RUN gem install bundler
 
