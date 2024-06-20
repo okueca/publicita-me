@@ -17,9 +17,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+  host: db
   username: postgres
   password: cuidado
+  
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -82,8 +86,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  host: postgres://postgres:cuidado@185.143.45.143:5430/postgres
+  host: postgres://postgres:udBqFsK593ae7g4atAoMvRmVG7Q9sLuzHXjsmUpmFeB4tmOWLRp7qCK8R7yRmnnB@tkwgg4g:5432/postgres
   database: publicita_me_production
-  username: publicita_me
-  port: 5430
+  username: postgres
+  port: 5432
   password: <%= ENV["PUBLICITA_ME_DATABASE_PASSWORD"] %>
