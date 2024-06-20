@@ -86,7 +86,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  host: postgres://postgres:udBqFsK593ae7g4atAoMvRmVG7Q9sLuzHXjsmUpmFeB4tmOWLRp7qCK8R7yRmnnB@tkwgg4g:5432/postgres
+  host: tkwgg4g
   database: publicita_me_production
   username: postgres
   port: 5432
