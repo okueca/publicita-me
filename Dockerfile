@@ -6,7 +6,8 @@ WORKDIR /docker/app
 
 ENV GIT_ACCESS_TOKEN='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' 
 
-RUN git clone https://ariclinis:${GIT_ACCESS_TOKEN}@github.com/okueca/publicita-me.git /docker/app
+RUN apk --no-cache add git \ 
+    && git clone https://ariclinis:${GIT_ACCESS_TOKEN}@github.com/okueca/publicita-me.git
 
 COPY Gemfile* ./
 
