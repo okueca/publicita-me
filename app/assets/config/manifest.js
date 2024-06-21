@@ -9,3 +9,5 @@
 //= link_tree ../../javascript .js
 // ...
 //= link_tree ../../../vendor/javascript .js
+//= require chartkick
+//= require Chart.bundle
