@@ -20,6 +20,7 @@ default: &default
   host: db
   username: postgres
   password: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -82,8 +83,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  host: postgres://postgres:cuidado@185.143.45.143:5430/postgres
+  host: tkwgg4g
   database: publicita_me_production
-  username: publicita_me
-  port: 5430
+  username: postgres
+  port: 5432
   password: <%= ENV["PUBLICITA_ME_DATABASE_PASSWORD"] %>
