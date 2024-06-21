@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_13_170517) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_21_142817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_170517) do
     t.text "content"
   end
 
+  create_table "screen_prices", force: :cascade do |t|
+    t.float "price"
+    t.integer "unit_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "screen_id", null: false
+    t.index ["screen_id"], name: "index_screen_prices_on_screen_id"
+  end
+
   create_table "screens", force: :cascade do |t|
     t.string "name"
     t.string "country"
@@ -89,6 +98,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_170517) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "provider"
   end
 
   create_table "screnn_posts", force: :cascade do |t|
@@ -118,4 +130,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_170517) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "post_screens", "posts"
   add_foreign_key "post_screens", "screens"
+  add_foreign_key "screen_prices", "screens"
 end

@@ -22,7 +22,8 @@ export default class extends Controller {
         const lng = position.coords.longitude;
 console.log(lat,lng)
          // Create Map in location with lat 38 and long -9, the idea is get the current location of user
-     var map = L.map('map').setView([38.72, -9.13], 12);
+     var map = L.map('map',).setView([lat, lng], 17);
+ 
 
      //Here we'll create all create all marker for screens locations in map
      fetch(element.getAttribute("data-src"))
@@ -33,7 +34,7 @@ console.log(lat,lng)
      }).catch(error => console.error('Error fetching JSON:', error));
      
      // Exemple to how create theses markers in map
-     L.marker([38.7138314, -9.1386425]).addTo(map);
+     L.marker([lat, lng]).addTo(map);
  
      //Add map in HTML
      var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

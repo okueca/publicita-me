@@ -27,7 +27,8 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     respond_to do |format|
       if @post.save
-        format.html { redirect_to posts_url, notice: "Post was successfully created." }
+        format.html { redirect_to new_post_url, notice: "Your post was Create Sucessfully, 
+          please wait for aproval an email will be send to you" }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }

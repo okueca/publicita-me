@@ -1,12 +1,16 @@
 <%= stylesheet_link_tag('new_post') %>
 
+<% if  notice %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<% end %>
+
 <div class=" " data-controller="map">
 
-  
-
-
-
-  <% if  mobile_device?  %>
+  <% if  true  %>
   
     <div class="layout-mobile   position-relative">
       
