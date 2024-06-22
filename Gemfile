@@ -18,6 +18,13 @@ gem "puma", "~> 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
+# Use jquery as the JavaScript librar
+gem 'jquery-rails'
+# Use jquery-ui for pretty UI
+gem 'jquery-ui-rails'
+
+#
+gem 'select2-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
@@ -46,6 +53,9 @@ gem "chartkick"
 # Use Sass to process CSS
 # gem "sassc-rails"
 gem 'leaflet-rails'
+
+# Geo Locations in rails
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

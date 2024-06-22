@@ -1,6 +1,11 @@
 class Post < ApplicationRecord
     enum status: [:pending, :accepted, :posted, :done], _default: :pending
-    
+    enum unitDuration: {
+        Months: 0,
+        Days: 1,
+        Hours: 2,
+        Minutes: 3
+    }
     belongs_to :user
     has_one    :payment, dependent: :destroy
     has_many   :post_dates, dependent: :destroy

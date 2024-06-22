@@ -6,4 +6,5 @@ import "popper"
 import "bootstrap"
 import "chartkick"
 import "Chart.bundle"
+import "jquery"
 Rails.start()
