@@ -9,6 +9,6 @@ class Screen < ApplicationRecord
     enum status: [:active, :inactive], _default: :active
 
     def description_to_show
-        "#{self.name} - #{self.location} - #{self.dimensions}"
+        "#{self.name} - #{self.location}, #{self.country} - #{self.dimensions}"
     end
 end

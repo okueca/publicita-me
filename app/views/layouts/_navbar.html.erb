@@ -1,10 +1,18 @@
 <%= stylesheet_link_tag('_navbar') %>
+<style>
+    .navbar-toggler {
+        background-color: transparent;
+        border: none;
+    }
 
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='black' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12.5a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm0-5a.5.5 0 0 0 0 1h11a.5.5.0 0 0 0-1h-11zm0-5a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11z'/%3E%3C/svg%3E");
+    }
+</style>
 <% color =  (request.env['PATH_INFO'] == '/'  || request.env['PATH_INFO'] == '/homes/index') ?  'bg-transparent' : 'bg-dark' %> 
 <nav class="<%= color %> z-3 navbar navbar-expand-lg">
     <a class="navbar-brand text-light ps-4" href="#">Publicita-te</a>
-    <button class="navbar-toggler bg-light me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-
+    <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end sm-bg-dark pe-5" id="navbarNavAltMarkup">

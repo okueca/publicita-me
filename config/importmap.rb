@@ -1,6 +1,10 @@
 # Pin npm packages by running ./bin/importmap
 
 pin "application", preload: true
+pin "select2", to: "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+pin "jquery", to: "jquery.min.js", preload: true
+pin "jquery_ujs", to: "jquery_ujs.js", preload: true
+pin "jquery-ui", to: "jquery-ui.min.js", preload: true
 pin "stimulus-rails-nested-form", to: "https://ga.jspm.io/npm:stimulus-rails-nested-form@4.1.0/dist/stimulus-rails-nested-form.mjs"
 pin "@rails/actiontext", to: "actiontext.js"
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true

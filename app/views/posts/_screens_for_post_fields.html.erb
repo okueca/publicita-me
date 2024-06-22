@@ -1,13 +1,12 @@
 <div class="nested-form-screens-wrapper nested-form-posts mb-1" data-new-record="<%= line_item_fields.object&.new_record? %>" >
 
-<div class="row align-items-center justify-content-center">
-    <div class="col-10 ">
-        <%= line_item_fields.collection_select :screen_id, Screen.all, :id, :description_to_show, {prompt: 'Select a screen'}, { class: 'form-control' } %>
+<div class="row align-items-center justify-content-center" >
+    <div class="col-11" style="padding-rigth: 0; margin-rigth: 0">
+        <%= line_item_fields.collection_select :screen_id, Screen.all, :id, :description_to_show, {prompt: 'You can search by name, location, country or dimension'}, { class: 'form-control js-example-basic-multiple' } %>
     </div>
-    
-    <div class="col-2" >
-        <%= link_to '#',class:"btn btn-danger btn-xs waves-effect waves-light ", data: { action: 'click->nested-form-posts#remove_association' } do%>
-        <i class="fa-solid fa-trash"></i>
+     <div class="col-1" style="padding-left: 0; margin-left: -10px">
+        <%= link_to '#',class:"btn btn-danger btn-sm waves-effect waves-light ", data: { action: 'click->nested-form-posts#remove_association' } do%>
+            <i class="fa-solid fa-trash"></i>
         <% end %>
     </div>
 </div>
