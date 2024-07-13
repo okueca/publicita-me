@@ -28,6 +28,8 @@ gem 'select2-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -49,6 +51,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem "chartkick"
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -90,3 +93,4 @@ gem 'factory_bot_rails'
 gem "devise", "~> 4.9"
 gem 'bootstrap', '~> 5.3.2'
 gem 'dartsass-sprockets'
+

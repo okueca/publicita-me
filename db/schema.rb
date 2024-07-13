@@ -77,6 +77,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_21_142817) do
     t.datetime "updated_at", null: false
     t.integer "content_type"
     t.text "content"
+    t.float "timeDuration"
+    t.integer "unitDuration"
   end
 
   create_table "screen_prices", force: :cascade do |t|
