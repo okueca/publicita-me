@@ -1,3 +1,17 @@
+# == Schema Informations
+#
+#  Table name: users
+#
+#  Atributes:
+#   id
+#   usename          :string
+#   email            :string
+#   phone            :string
+#   role             :integer
+#   created_at       :datetime
+#   updated_at       :datetime
+#
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,7 +21,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :country, presence: true
   validates :role, presence: true
-  has_many  :posts, class_name: "post", foreign_key: "user_id", dependent: :destroy
-  has_many  :payments, class_name: "payment", foreign_key: "user_id", dependent: :destroy
+  has_many  :posts, class_name: "Post", foreign_key: "user_id", dependent: :destroy
+  has_many  :payments, class_name: "Payment", foreign_key: "user_id", dependent: :destroy
   
 end
