@@ -11,9 +11,9 @@
 </style>
 <% color =  (request.env['PATH_INFO'] == '/'  || request.env['PATH_INFO'] == '/homes/index') ?  'bg-transparent' : 'bg-dark' %> 
 <nav class="<%= color %> z-3 navbar navbar-expand-lg">
-    <a class="navbar-brand text-light ps-4" href="#">Publicita-te</a>
-    <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <%= link_to "Publicita-te",  homes_index_path, :class => "navbar-brand text-light ps-4" %>
+    <button class="navbar-togglerar navbar-toggler bg-transparent   me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars fa-xl accordion-body" style="color: #ffffff;"></i>
     </button>
     <div class="collapse navbar-collapse justify-content-end sm-bg-dark pe-5" id="navbarNavAltMarkup">
       <div class="navbar-nav">

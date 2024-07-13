@@ -9,5 +9,9 @@
 //= link_tree ../../javascript .js
 // ...
 //= link_tree ../../../vendor/javascript .js
+
+//= require chartkick
+//= require Chart.bundle
+
 //= link jquery.min.js
 //= link jquery_ujs.js
