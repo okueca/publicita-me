@@ -43,24 +43,24 @@
           <div data-target="target"></div>
           <div class="mb-1 d-flex justify-content-start mb-2" data-target="nested-form-posts.links">
               <%= link_to "#", class: "btn btn-success waves-effect waves-light mt-2 ", data: { action: "click->nested-form-posts#add_association" } do%>
-                  <i class="mdi mdi-plus"></i> Adicionar Tela 
+                  <i class="mdi mdi-plus"></i> Adicionar Telas
               <% end %>
           </div>
       </div>
   </div>
   <div class="row">
-    <div class="col-md-12 col-sm-12 mb-3 ">
+    <div class="col-md-12 col-sm-12 mb-3  ">
       <%= form.label :content, "Select content", class:"form-control mb-3", style: "display: block" %>
       <%= form.file_field :content, class:"form-control" %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 mb-3">
+  <div class="row  ">
+    <div class="col-md-12 col-sm-12 my-3  w-100 d-flex justify-content-start w ">
       <% if @post&.new_record? %>
-        <%= form.submit "Create a Post" , class:"btn btn-primary col-12"%>
+        <%= form.submit "Create a Post" , class:"btn btn-primary col-12 width-mobile w-25 "%>
       <% else %>
-        <%= form.submit "Update a Post" , class:"btn btn-primary col-12"%>
+        <%= form.submit "Update a Post" , class:"btn btn-primary col-12 width-mobile w-25"%>
       <% end %>
 
     </div>
