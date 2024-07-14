@@ -97,3 +97,4 @@ gem 'dartsass-sprockets'
 
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'sidekiq-scheduler', '~> 3.0'
