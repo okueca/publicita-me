@@ -51,7 +51,7 @@ class Post < ApplicationRecord
         end
 
         #check content type
-        if content.attachment.blob.content_type.in?(%w(video/mp4 video/quicktime  image/jpeg image/png))
+        if content.attachment.blob.content_type.in?(%w(video/mp4 image/jpeg image/png))
             errors.add(:content, "must be a video or image file.") unless content.attached?
         else
             errors.add(:content, "must be a video or image file.")
