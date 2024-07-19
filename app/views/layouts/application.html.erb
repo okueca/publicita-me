@@ -24,7 +24,7 @@
     <main>
       <%= yield %>
     </main>
-    <% if request.env['PATH_INFO'] != '/homes/index' %>
+    <% if request.env['PATH_INFO'] != '/homes/index'  %>
       <%= render "layouts/footer" %>
     <% end %>
   </body>
