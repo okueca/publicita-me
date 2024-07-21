@@ -16,7 +16,6 @@
 #
 
 class Post < ApplicationRecord
-    
     enum status: [:pending, :accepted, :posted, :done], _default: :pending
     enum unitDuration: {
         Months: 0,
@@ -39,24 +38,52 @@ class Post < ApplicationRecord
 
     accepts_nested_attributes_for :post_screens, allow_destroy: true, reject_if: :all_blank 
 
-    private
+    after_update :create_post_date
 
-    def validate_attachment_file
-        #validate video and image
-        return unless content.attached?
-
-        #check content type and size
-        if content.attachment.blob.byte_size > 10.megabytes
-            errors.add(:content, "must be less than 10MB.")
+    def time_expired
+        date = PostDate.find_by(post_id: self.id)
+        if(date == nil)
+            return false
         end
+        current_date = date.date
+        expired = 0
 
-        #check content type
-        if content.attachment.blob.content_type.in?(%w(video/mp4 image/jpeg image/png))
-            errors.add(:content, "must be a video or image file.") unless content.attached?
+        case self.unitDuration
+        when "Months"
+            expired = DateTime.now.month - (current_date.month + self.timeDuration)
+
+        when "Days"
+            expired = DateTime.now.days - (current_date.days + self.timeDuration)
+
+        when "hours"
+            expired = DateTime.now.hour - (current_date.hour + self.timeDuration)
         else
-            errors.add(:content, "must be a video or image file.")
+            expired = DateTime.now.minute - (current_date.minute + self.timeDuration)
         end
-        
+
+        return (expired < 0)
     end
+    private 
+      def create_post_date
+         PostDate.create(post_id: self.id, date: DateTime.now, frequency: self.timeDuration)
+      end
+
+      def validate_attachment_file
+          #validate video and image
+          return unless content.attached?
+
+          #check content type and size
+          if content.attachment.blob.byte_size > 10.megabytes
+              errors.add(:content, "must be less than 10MB.")
+          end
+
+          #check content type
+          if content.attachment.blob.content_type.in?(%w(video/mp4 image/jpeg image/png))
+              errors.add(:content, "must be a video or image file.") unless content.attached?
+          else
+              errors.add(:content, "must be a video or image file.")
+          end
+
+      end
 
 end

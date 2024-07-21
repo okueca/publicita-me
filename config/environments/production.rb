@@ -3,6 +3,9 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Set Solid Queue as your Active Job's queue backend manually
+  config.active_job.queue_adapter = :solid_queue
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -57,9 +60,6 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
-  # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "publicita_me_production"
 
   config.action_mailer.perform_caching = false
